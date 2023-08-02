@@ -6,8 +6,17 @@ import org.junit.jupiter.api.Test;
 public class RadioTest {
 
     @Test
+    public void testVolume() {
+        Radio rad = new Radio(0, 9);
+
+        Assertions.assertEquals(0, rad.getMinWave());
+        Assertions.assertEquals(9, rad.getMaxWave());
+        Assertions.assertEquals(0, rad.getCurrentWave());
+    }
+
+    @Test
     public void shouldSetIncreaseVolume() {
-        Radio rad = new Radio();
+        Radio rad = new Radio(0, 100);
 
         rad.setIncreaseVolume(100);
 
@@ -19,7 +28,7 @@ public class RadioTest {
 
     @Test
     public void shouldSetIncreaseVolumeMax() {
-        Radio rad = new Radio();
+        Radio rad = new Radio(0, 100);
 
         rad.setIncreaseVolume(101);
 
@@ -31,7 +40,7 @@ public class RadioTest {
 
     @Test
     public void shouldSetIncreaseVolumeMin() {
-        Radio rad = new Radio();
+        Radio rad = new Radio(0, 100);
 
         rad.setIncreaseVolume(99);
 
@@ -43,7 +52,7 @@ public class RadioTest {
 
     @Test
     public void shouldSetDecreaseVolume() {
-        Radio rad = new Radio();
+        Radio rad = new Radio(0, 100);
 
         rad.setDecreaseVolume(0);
 
@@ -55,7 +64,7 @@ public class RadioTest {
 
     @Test
     public void shouldSetDecreaseVolumeMax() {
-        Radio rad = new Radio();
+        Radio rad = new Radio(0, 100);
 
         rad.setDecreaseVolume(1);
 
@@ -67,7 +76,7 @@ public class RadioTest {
 
     @Test
     public void shouldSetDecreaseVolumeMin() {
-        Radio rad = new Radio();
+        Radio rad = new Radio(0, 100);
 
         rad.setDecreaseVolume(-1);
 
@@ -79,7 +88,7 @@ public class RadioTest {
 
     @Test
     public void shouldSetNextRadio() {
-        Radio rad = new Radio();
+        Radio rad = new Radio(0, 9);
 
         rad.setNextRadio(9);
 
@@ -91,7 +100,7 @@ public class RadioTest {
 
     @Test
     public void shouldSetNextRadioMax() {
-        Radio rad = new Radio();
+        Radio rad = new Radio(0, 9);
 
         rad.setNextRadio(10);
 
@@ -103,7 +112,7 @@ public class RadioTest {
 
     @Test
     public void shouldSetNextRadioMin() {
-        Radio rad = new Radio();
+        Radio rad = new Radio(0, 9);
 
         rad.setNextRadio(8);
 
@@ -115,7 +124,7 @@ public class RadioTest {
 
     @Test
     public void shouldSetPrevRadio() {
-        Radio rad = new Radio();
+        Radio rad = new Radio(0, 9);
 
         rad.setPrevRadio(0);
 
@@ -127,7 +136,7 @@ public class RadioTest {
 
     @Test
     public void shouldSetPrevRadioMax() {
-        Radio rad = new Radio();
+        Radio rad = new Radio(0, 9);
 
         rad.setPrevRadio(1);
 
@@ -139,7 +148,7 @@ public class RadioTest {
 
     @Test
     public void shouldSetPrevRadioMin() {
-        Radio rad = new Radio();
+        Radio rad = new Radio(0, 9);
 
         rad.setPrevRadio(-1);
 
